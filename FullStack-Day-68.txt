@@ -1,0 +1,71 @@
+Day 68:
+===========
+
+Typecasting in JavaScript
+===================================
+Typecasting means converting one data type into another.
+In JavaScript, this is commonly used to convert string → number.
+
+a) parseInt()
+=================
+Converts a string into an integer
+
+Stops reading when it finds a non-numeric character
+
+Removes decimal values
+
+Example:
+
+parseInt("100");       // 100
+parseInt("100.75");    // 100
+parseInt("100px");     // 100
+parseInt("px100");     // NaN
+
+
+✔ Used when only whole numbers are needed.
+
+b) parseFloat()
+====================
+Converts a string into a floating-point number
+
+Supports decimals
+
+Stops at the first non-numeric character
+
+Example:
+
+parseFloat("99.99");     // 99.99
+parseFloat("50.5kg");    // 50.5
+parseFloat("kg50.5");    // NaN
+
+
+✔ Used for decimal values.
+
+c) Number()
+================
+Converts entire value into a number
+
+If conversion fails → NaN
+
+More strict than parseInt() and parseFloat()
+
+Example:
+
+Number("100");       // 100
+Number("100.5");     // 100.5
+Number("100px");     // NaN
+Number(true);        // 1
+Number(false);       // 0
+
+
+✔ Used when complete numeric conversion is required.
+
+Quick Comparison
+Method	Decimals	Stops at text	Strict
+parseInt()	❌	✔	❌
+parseFloat()	✔	✔	❌
+Number()	✔	❌	✔
+Interview Tip 💡
+
+Use Number() when you expect pure numeric input,
+use parseInt() / parseFloat() when input may contain units or text.
